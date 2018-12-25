@@ -1,5 +1,7 @@
 # :cyclone: :bar_chart: :chart_with_upwards_trend: :chart_with_downwards_trend: Analytics Engine Manager
 
+
+
 # Design Diagram
 ![](Diagrams/Design-Diagram.png)
 
@@ -78,7 +80,7 @@ public class AnalyticsEnginesFactory : IAnalyticsEnginesFactory
         List<ICustomAnalyticsEngine> customAnalyticsEngines = new List<ICustomAnalyticsEngine>();
         customAnalyticsEngines.Add(new ApplicationInsightsAnalyticsEngine(analyticsConfigurationManager));
 
-        // Add the new concrete class to the list of Analytics Engines
+        // Add an instance of the new concrete class to the list of Analytics Engines
         customAnalyticsEngines.Add(new MyAnalyticsEngine(analyticsConfigurationManager));
 
         return customAnalyticsEngines;
