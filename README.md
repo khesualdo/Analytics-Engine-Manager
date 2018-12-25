@@ -29,7 +29,7 @@ string eventName = "";
 string userID = "";
 string remoteIPAddress = "";
 
-IAnalyticsEvent analyticsEvent = new AnalyticsEvent(eventName,userID, remoteIpAddress);
+IAnalyticsEvent analyticsEvent = new AnalyticsEvent(eventName, userID, remoteIpAddress);
 AnalyticsEventProcessor.LogEvent(analyticsEvent);
 ```
 
@@ -39,7 +39,7 @@ string eventName = "";
 string userID = "";
 string remoteIPAddress = "";
 
-IAnalyticsEvent analyticsEvent = new AnalyticsEvent(eventName,userID, remoteIpAddress);
+IAnalyticsEvent analyticsEvent = new AnalyticsEvent(eventName, userID, remoteIpAddress);
 
 ICustomConfigurationManager analyticsConfigurationManager = new CustomConfigurationManager();
 IAnalyticsEnginesFactory analyticsEnginesFactory = new AnalyticsEnginesFactory();
