@@ -9,6 +9,8 @@
 # How To Run
 
 > Set `ApplicationInsightsInstrumentationKey` in `App.config` to the resource instrumentation key.
+
+
 > Set `ApplicationInsights` in `App.config` to `true` if tracking events, `false` otherwise.
 
 ### Packages
