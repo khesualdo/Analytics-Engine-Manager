@@ -1,10 +1,10 @@
 # :cyclone: :bar_chart: :chart_with_upwards_trend: :chart_with_downwards_trend: Analytics Engine Manager
 
 # Design Diagram
-![](Images/Design-Diagram.png)
+![](Diagrams/Design-Diagram.png)
 
 # Detailed Design Diagram
-![](Images/Detailed-Design-Diagram.png)
+![](Diagrams/Detailed-Design-Diagram.png)
 
 # How To Run
 
