@@ -27,7 +27,7 @@ This would require you to register the following mappings to the DI container:
 - `IAnalyticsEnginesFactory` to `AnalyticsEnginesFactory`
 - `IAnalyticsEventProcessor` to `AnalyticsEventProcessor`
 
-> Making them a singleton would mean that only a single object is created per project, this is fine, however, if Analytics Engine Manager, for example, is used on multiple endpoints, then all endpoints are dependent on a single resource. Usually this is not ideal.
+> Making them a singleton would mean that only a single object is created per project, this is fine, however, if Analytics Engine Manager, for example, is used by multiple endpoints, then all endpoints are dependent on a single resource. Usually this is not ideal.
 
 ```C#
 string eventName = "";
@@ -53,7 +53,7 @@ IAnalyticsEventProcessor analyticsEventProcessor = new AnalyticsEventProcessor(a
 analyticsEventProcessor.LogEvent(analyticsEvent);
 ```
 
-# How To Add an Analytics Engine
+# How To Add a New Analytics Engine
 First, create a concrete class for the new Analytics Engine.
 ```C#
 /// <summary>
