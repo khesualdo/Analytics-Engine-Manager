@@ -1,8 +1,8 @@
 # :cyclone: :bar_chart: :chart_with_upwards_trend: :chart_with_downwards_trend: Analytics Engine Manager
 
-Architecure design and implementation for an analytics engine manager. Encorporates the extensibility and reusability software design principles to allow the addition of new analytics engines. The code is also testable and comes with a suite of unit tests.
+Architecture design and implementation for an analytics engine manager. Incorporates the extensibility and reusability software design principles to allow the addition of new analytics engines. The code is also testable and comes with a suite of unit tests.
 
-An analytics engine provides the means of logging and propogating an event to the cloud. The code has a working example using the Azure Application Insights analytics engine.
+An analytics engine provides the means of logging and propagating an event to the cloud. The code has a working example using Azure Application Insights.
 
 # Design Diagram
 ![](Diagrams/Design-Diagram.png)
