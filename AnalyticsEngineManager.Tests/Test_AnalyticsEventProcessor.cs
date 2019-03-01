@@ -9,7 +9,7 @@ public class Test_AnalyticsEventProcessor
     private IAnalyticsEvent _dummyAnalyticsEvent;
     private Mock<IAnalyticsEnginesFactory> _mockAnalyticsEnginesFactory;
     private Mock<ICustomConfigurationManager> _mockCustomConfigurationManager;
-    private Mock<ICustomAnalyticsEngine> _mockApplicationInsightsAnalyticsEngine;
+    private Mock<IAnalyticsEngine> _mockApplicationInsightsAnalyticsEngine;
 
     [TestInitialize]
     public void Initilize()
@@ -19,8 +19,8 @@ public class Test_AnalyticsEventProcessor
         _mockCustomConfigurationManager = new Mock<ICustomConfigurationManager>();
         _mockAnalyticsEnginesFactory = new Mock<IAnalyticsEnginesFactory>();
 
-        List<ICustomAnalyticsEngine> customAnalyticsEngines = new List<ICustomAnalyticsEngine>();
-        _mockApplicationInsightsAnalyticsEngine = new Mock<ICustomAnalyticsEngine>();
+        List<IAnalyticsEngine> customAnalyticsEngines = new List<IAnalyticsEngine>();
+        _mockApplicationInsightsAnalyticsEngine = new Mock<IAnalyticsEngine>();
         customAnalyticsEngines.Add(_mockApplicationInsightsAnalyticsEngine.Object);
 
         _mockAnalyticsEnginesFactory.Setup(e => e.CreateAnalyticsEngines(It.IsAny<ICustomConfigurationManager>())).Returns(customAnalyticsEngines);

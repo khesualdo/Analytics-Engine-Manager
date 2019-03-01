@@ -7,14 +7,14 @@ public interface IAnalyticsEnginesFactory
     /// </summary>
     /// <param name="analyticsConfigurationManager">Configuration Manager</param>
     /// <returns>List of all Analytics Engines</returns>
-    List<ICustomAnalyticsEngine> CreateAnalyticsEngines(ICustomConfigurationManager analyticsConfigurationManager);
+    List<IAnalyticsEngine> CreateAnalyticsEngines(ICustomConfigurationManager analyticsConfigurationManager);
 }
 
 public class AnalyticsEnginesFactory : IAnalyticsEnginesFactory
 {
-    public List<ICustomAnalyticsEngine> CreateAnalyticsEngines(ICustomConfigurationManager analyticsConfigurationManager)
+    public List<IAnalyticsEngine> CreateAnalyticsEngines(ICustomConfigurationManager analyticsConfigurationManager)
     {
-        List<ICustomAnalyticsEngine> customAnalyticsEngines = new List<ICustomAnalyticsEngine>();
+        List<IAnalyticsEngine> customAnalyticsEngines = new List<IAnalyticsEngine>();
         customAnalyticsEngines.Add(new ApplicationInsightsAnalyticsEngine(analyticsConfigurationManager));
         return customAnalyticsEngines;
     }

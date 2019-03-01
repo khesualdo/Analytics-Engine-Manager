@@ -5,7 +5,7 @@ using Microsoft.ApplicationInsights.Extensibility;
 /// <summary>
 /// Sends data to Azure Application Insights.
 /// </summary>
-public class ApplicationInsightsAnalyticsEngine : ICustomAnalyticsEngine
+public class ApplicationInsightsAnalyticsEngine : IAnalyticsEngine
 {
     private TelemetryClient _telemetryClient;
 

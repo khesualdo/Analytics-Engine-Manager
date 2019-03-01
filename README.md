@@ -60,9 +60,9 @@ First, create a concrete class for the new Analytics Engine.
 ```C#
 /// <summary>
 /// Create a concrete class for the new Analytics Engine.
-/// Implement the ICustomAnalyticsEngine interface.
+/// Implement the IAnalyticsEngine interface.
 /// </summary>
-public class MyAnalyticsEngine : ICustomAnalyticsEngine
+public class MyAnalyticsEngine : IAnalyticsEngine
 {
     public string GetAnalyticsEngineName { get; private set; }
 
@@ -77,9 +77,9 @@ Second, add the new concrete class to `AnalyticsEnginesFactory`.
 ```C#
 public class AnalyticsEnginesFactory : IAnalyticsEnginesFactory
 {
-    public List<ICustomAnalyticsEngine> CreateAnalyticsEngines(ICustomConfigurationManager analyticsConfigurationManager)
+    public List<IAnalyticsEngine> CreateAnalyticsEngines(ICustomConfigurationManager analyticsConfigurationManager)
     {
-        List<ICustomAnalyticsEngine> customAnalyticsEngines = new List<ICustomAnalyticsEngine>();
+        List<IAnalyticsEngine> customAnalyticsEngines = new List<IAnalyticsEngine>();
         customAnalyticsEngines.Add(new ApplicationInsightsAnalyticsEngine(analyticsConfigurationManager));
 
         // Add an instance of the new concrete class to the list of Analytics Engines
