@@ -14,9 +14,9 @@ public class AnalyticsEnginesFactory : IAnalyticsEnginesFactory
 {
     public List<IAnalyticsEngine> CreateAnalyticsEngines(ICustomConfigurationManager analyticsConfigurationManager)
     {
-        List<IAnalyticsEngine> customAnalyticsEngines = new List<IAnalyticsEngine>();
-        customAnalyticsEngines.Add(new ApplicationInsightsAnalyticsEngine(analyticsConfigurationManager));
-        return customAnalyticsEngines;
+        List<IAnalyticsEngine> analyticsEngines = new List<IAnalyticsEngine>();
+        analyticsEngines.Add(new ApplicationInsightsAnalyticsEngine(analyticsConfigurationManager));
+        return analyticsEngines;
     }
 }
 

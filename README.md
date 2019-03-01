@@ -79,13 +79,13 @@ public class AnalyticsEnginesFactory : IAnalyticsEnginesFactory
 {
     public List<IAnalyticsEngine> CreateAnalyticsEngines(ICustomConfigurationManager analyticsConfigurationManager)
     {
-        List<IAnalyticsEngine> customAnalyticsEngines = new List<IAnalyticsEngine>();
-        customAnalyticsEngines.Add(new ApplicationInsightsAnalyticsEngine(analyticsConfigurationManager));
+        List<IAnalyticsEngine> analyticsEngines = new List<IAnalyticsEngine>();
+        analyticsEngines.Add(new ApplicationInsightsAnalyticsEngine(analyticsConfigurationManager));
 
         // Add an instance of the new concrete class to the list of Analytics Engines
-        customAnalyticsEngines.Add(new MyAnalyticsEngine(analyticsConfigurationManager));
+        analyticsEngines.Add(new MyAnalyticsEngine(analyticsConfigurationManager));
 
-        return customAnalyticsEngines;
+        return analyticsEngines;
     }
 }
 

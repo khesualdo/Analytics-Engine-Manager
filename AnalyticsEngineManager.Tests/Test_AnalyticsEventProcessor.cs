@@ -19,11 +19,11 @@ public class Test_AnalyticsEventProcessor
         _mockCustomConfigurationManager = new Mock<ICustomConfigurationManager>();
         _mockAnalyticsEnginesFactory = new Mock<IAnalyticsEnginesFactory>();
 
-        List<IAnalyticsEngine> customAnalyticsEngines = new List<IAnalyticsEngine>();
+        List<IAnalyticsEngine> analyticsEngines = new List<IAnalyticsEngine>();
         _mockApplicationInsightsAnalyticsEngine = new Mock<IAnalyticsEngine>();
-        customAnalyticsEngines.Add(_mockApplicationInsightsAnalyticsEngine.Object);
+        analyticsEngines.Add(_mockApplicationInsightsAnalyticsEngine.Object);
 
-        _mockAnalyticsEnginesFactory.Setup(e => e.CreateAnalyticsEngines(It.IsAny<ICustomConfigurationManager>())).Returns(customAnalyticsEngines);
+        _mockAnalyticsEnginesFactory.Setup(e => e.CreateAnalyticsEngines(It.IsAny<ICustomConfigurationManager>())).Returns(analyticsEngines);
     }
 
     /// <summary>

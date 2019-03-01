@@ -35,14 +35,14 @@ public class AnalyticsEventProcessor : IAnalyticsEventProcessor
 
     public void LogEvent(IAnalyticsEvent analyticsEvent)
     {
-        foreach (IAnalyticsEngine customAnalyticsEngine in _analyticsEnginesFactory.CreateAnalyticsEngines(_customConfigurationManager))
+        foreach (IAnalyticsEngine analyticsEngine in _analyticsEnginesFactory.CreateAnalyticsEngines(_customConfigurationManager))
         {
-            string analyticsEngineName = customAnalyticsEngine.AnalyticsEngineName;
+            string analyticsEngineName = analyticsEngine.AnalyticsEngineName;
             bool flag = _customConfigurationManager.GetFlag(analyticsEngineName);
 
             if (flag)
             {
-                customAnalyticsEngine.SendEvent(analyticsEvent);
+                analyticsEngine.SendEvent(analyticsEvent);
             }
         }
     }
@@ -55,13 +55,13 @@ public class AnalyticsEventProcessor : IAnalyticsEventProcessor
     public async Task LogEventParallelAsync(IAnalyticsEvent analyticsEvent)
     {
         List<Task> tasks = new List<Task>();
-        foreach (IAnalyticsEngine customAnalyticsEngine in _analyticEnginesFactory.CreateAnalyticsEngines(_customConfigurationManager))
+        foreach (IAnalyticsEngine analyticsEngine in _analyticEnginesFactory.CreateAnalyticsEngines(_customConfigurationManager))
         {
-            string analyticsEngineName = customAnalyticsEngine.GetAnalyticsEngineName;
+            string analyticsEngineName = analyticsEngine.GetAnalyticsEngineName;
             bool flag = _customConfigurationManager.GetFlag(analyticsEngineName);
             if (flag)
             {
-                Task task = customAnalyticsEngine.SendEventAsync(analyticsEvent);
+                Task task = analyticsEngine.SendEventAsync(analyticsEvent);
                 tasks.Add(task);
             }
         }
